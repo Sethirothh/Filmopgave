@@ -1,8 +1,25 @@
+// Array Declarations
+var movies = document.querySelectorAll('.movie'); 
+var movieArray = [];
 
+//Collect Array Data
+Array.from(movies).forEach(function(e){
+    movieArray.push(e);
+    return movieArray;
+})
 
-var date = new Date();
+//Loop through Array
+for (const movie of movieArray) {
+    //Call function per click
+    
+      movie.addEventListener('click', toggleClass);
+}
 
-var currentDate = date.getDate();
-var currentMonth = date.getDate();
-
-document.querySelector(".currDate").innerHTML = date;
+//Function called by click
+function toggleClass() {
+    if (this.classList.contains('active')) {
+        this.classList.remove('active');
+    } else {
+        this.classList.add('active');
+    }
+}
