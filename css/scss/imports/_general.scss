@@ -1,0 +1,11 @@
+* {
+    font-family: $font-fam;
+    padding: 0;
+    margin: 0;
+}
+.grid-container {
+    max-width: 1400px;
+    width:100%;
+    padding:0 40px;
+    box-sizing: border-box;
+}
