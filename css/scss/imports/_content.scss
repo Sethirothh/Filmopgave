@@ -124,3 +124,18 @@ header {
         }
     }
 }
+.print {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    width: 960px;
+    margin: 0 auto;
+    padding: 80px 0;
+    .movie {
+        width: 40%;
+        img {
+            width: 250px;
+        }
+
+    }
+}

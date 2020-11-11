@@ -1,24 +1,34 @@
-// Array Declarations
-var movies = document.querySelectorAll('.movie'); 
-var movieArray = [];
+fetch('js/json/movies.json')
+  .then(response => response.json())
+  .then(data => {
+      // Do something with your data
+        var json = data;
+        printLoaded(json);
+});
 
-//Collect Array Data
-Array.from(movies).forEach(function(e){
-    movieArray.push(e);
-    return movieArray;
-})
 
-//Loop through Array
-for (const movie of movieArray) {
-    //Call function per click
-      movie.addEventListener('click', toggleClass);
-}
-
-//Function called by click
-function toggleClass() {
-    if (this.classList.contains('active')) {
-        this.classList.remove('active');
-    } else {
-        this.classList.add('active');
+function printLoaded(json) {
+    var print = document.querySelector('.print');
+    print.innerHTML = "";
+    for (var movie of json) {
+        print.innerHTML += `
+        <div class="movie">
+        <div class="image">
+            <img src="/img/${movie.img}" alt="">
+        </div>
+            <h2>
+                ${movie.title}
+            </h2>
+            <p>
+            <h4>
+                Udgivet: ${movie.release}
+            </h4>
+                ${movie.description}     
+            </p>
+            <p>
+                Skuespillere: ${splitArray(movie.actor)}
+            </p>
+        </div>  
+        `;
     }
 }

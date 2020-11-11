@@ -1,3 +1,69 @@
-var movies = [{
-    
-}]
+[
+    {
+      "title": "The Shining",
+      "description": "lorem ipsum",
+      "img": "shining.jpg",
+      "trailer": "youtube.com",
+      "length": "2:26:53",
+      "release": "1980",
+      "actor": ["Jack Nicholson", "Shelly Duvall", "Danny Lloyd"],
+      "instructor": "Stanley Kubrick"
+    },
+    {
+      "title": "Sinister",
+      "description": "lorem ipsum",
+      "img": "sinister.jpg",
+      "trailer": "youtube.com",
+      "length": "1:50:53",
+      "release": "2012",
+      "actor": ["Ethan Hawk", "Juliet Rylance", "Fred Thompson "],
+      "instructor": "Scott Derrickson"
+    },
+    {
+      "title": "Scream",
+      "description": "lorem ipsum",
+      "img": "scream.jpg",
+      "trailer": "youtube.com",
+      "length": "1:51:53",
+      "release": "1996",
+      "actor": ["Drew Barrymore", "Roger Jackson", "Kevin Patrick Walls"],
+      "instructor": "Wes Craven"
+    },
+    {
+      "title": "Doctor Sleep",
+      "description": "lorem ipsum",
+      "img": "doctorsleep.jpg",
+      "trailer": "youtube.com",
+      "length": "1:52:53",
+      "release": "2019",
+      "actor": ["Ewan McGregor", "Rebecca Ferguson", "Kyliegh Curran"],
+      "instructor": "Mike Flanagan"
+    },
+    {
+      "title": "Orphan",
+      "description": "lorem ipsum",
+      "img": "orphan.jpg",
+      "trailer": "youtube.com",
+      "length": "2:03:53",
+      "release": "2009",
+      "actor": ["Vera Farmiga", "Peter Sarsgaard", "Isabelle Fuhrman"],
+      "instructor": "Jaume Collet-Serra"
+    },
+    {
+      "title": "The Nun",
+      "description": "lorem ipsum",
+      "img": "nun.jpg",
+      "trailer": "youtube.com",
+      "length": "1:36:53",
+      "release": "2018",
+      "actor": ["Demian Bichir", "Taissa Farmiga", "Jonas Bloquet"],
+      "instructor": "Corin Hardy"
+    }
+]
+
+
+
+
+
+
+

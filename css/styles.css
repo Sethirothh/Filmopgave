@@ -231,6 +231,28 @@ header::after {
   line-height: 1.8em;
 }
 
+.print {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 960px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.print .movie {
+  width: 40%;
+}
+
+.print .movie img {
+  width: 250px;
+}
+
 header nav {
   background: #F2F2F2;
 }
