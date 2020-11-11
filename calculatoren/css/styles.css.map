@@ -1,0 +1,17 @@
+{
+    "version": 3,
+    "mappings": "AGAA,AAAA,CAAC,CAAC;EACE,WAAW,EDOJ,WAAW,EAAE,UAAU;ECN9B,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;CACZ;;AACD,AAAA,eAAe,CAAC;EACZ,SAAS,EAAE,MAAM;EACjB,KAAK,EAAC,IAAI;EACV,MAAM,EAAE,MAAM;EACd,UAAU,EAAE,UAAU;CACzB;;AAED,AAAA,KAAK,CAAC;EACF,OAAO,EAAE,KAAK;EACd,QAAQ,EAAE,QAAQ;EAClB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;CAEhB",
+    "sources": [
+        "scss/styles.scss",
+        "scss/imports/_imports.scss",
+        "scss/imports/_variables.scss",
+        "scss/imports/_general.scss",
+        "scss/imports/_animations.scss",
+        "scss/imports/_content.scss",
+        "scss/imports/_header.scss",
+        "scss/imports/_footer.scss",
+        "scss/imports/_responsive.scss"
+    ],
+    "names": [],
+    "file": "styles.css"
+}

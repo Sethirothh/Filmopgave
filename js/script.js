@@ -11,7 +11,6 @@ Array.from(movies).forEach(function(e){
 //Loop through Array
 for (const movie of movieArray) {
     //Call function per click
-    
       movie.addEventListener('click', toggleClass);
 }
 
