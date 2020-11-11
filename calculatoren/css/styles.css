@@ -43,16 +43,23 @@ body .calculator {
 
 body .calculator button {
   padding: 12px;
-  width: 40px;
+  width: 50px;
   font-size: 18px;
 }
 
 body .calculator input {
   padding: 8px;
   display: block;
+  border: 0;
+  margin-bottom: 2px;
+}
+
+body .calculator #txtResult {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 0;
 }
 
 body .calculator input + input {
-  margin-bottom: 6px;
+  margin-bottom: 2px;
 }
 /*# sourceMappingURL=styles.css.map */
