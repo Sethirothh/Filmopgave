@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $colorGrey;
+    .calculator {
+        text-align: center;
+        padding:14px;
+        box-sizing: border-box;
+        background-color: $colorBrown;
+        border-radius: 5px;
+        button {
+            padding: 12px;
+            width: 40px;
+            font-size: 18px;
+        }
+        input {
+            padding: 8px;
+            display: block;
+        }
+        input + input {
+            margin-bottom: 6px;
+        }
+    }
+}
