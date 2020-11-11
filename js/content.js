@@ -12,6 +12,8 @@ function loaded(json) {
     container.innerHTML = "";
 
     for (var movie of json) {
+        
+        
         container.innerHTML += `
             <div class="movie">
             <div class="imageclip">
@@ -19,8 +21,10 @@ function loaded(json) {
                 <h3>${movie.title}</h3>
             </div>
                 <p>
-                    ${movie.description}     
+                    ${movie.description}   
+
                 </p>
+                
             </div>
         `;
     }
@@ -38,11 +42,30 @@ function loaded(json) {
     //Loop through Array
     for (const movie of movieArray) {
         //Call function per click
-        console.log(movie);
         movie.addEventListener('click', toggleClass);
     }
+    
 
 }
 
 
 
+
+/*var videoIDorURL = movie.trailer;
+        let youtube = {
+            getIdFromUrl: function (videoIDorURL) {
+                if (videoIDorURL.indexOf('http') === 0) {
+                    return videoIDorURL.split('v=')[1];
+                } else {
+                    return videoIDorURL;
+                    
+                }
+    
+            },
+            generateThumbnailUrl: function (videoIDorURL) {
+                return 'https://i3.ytimg.com/vi/' + youtube.getIdFromUrl(videoIDorURL) + '/default.jpg';
+            },
+            generateEmbedUrl: function (videoIDorURL) {
+                return 'https://www.youtube.com/embed/' + youtube.getIdFromUrl(videoIDorURL);
+            }
+        }*/
