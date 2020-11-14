@@ -16,7 +16,7 @@ function loaded(json) {
             .then(response => {return response.json()
             }) 
             .then(data => {
-                fetchLoad(data);
+                fetchLoad(data, movie.trailer);
 
 
             
@@ -25,37 +25,44 @@ function loaded(json) {
                 console.log(error);
             });
         
-            function fetchLoad(json) {
+            function fetchLoad(json, trailer) {
                 var container = document.querySelector('.grid-container');
                 container.innerHTML += "";
+                console.log(trailer);
                     container.innerHTML += `
                     <div class="movie">
-                    <div class="imageclip">
-                    <img src="${json.Poster}" alt="">
-                    <h3>${json.Title}</h3>
-                    </div>
-                    <p>
-                    ${json.Plot}   
-                    </p>
+                        <div class="imageclip">
+                        <img src="${json.Poster}" alt="">
+                        <h3>
+                            ${json.Title}
+                        </h3>
+                        </div>
+                        <p>
+                            Release date: ${json.Released}, Resume: ${json.Plot}   
+                        </p>
+                        
+                        <iframe src="${youtube.generateEmbedUrl(trailer)}"> 
+                    
+                        </iframe> 
                     </div>  
                 `;
                 
 
-    // Array Declarations
-    var movies = document.querySelectorAll('.movie'); 
-    var movieArray = [];
+                    // Array Declarations
+                    var movies = document.querySelectorAll('.movie'); 
+                    var movieArray = [];
 
-    //Collect Array Data
-    Array.from(movies).forEach(function(e){
-        movieArray.push(e);
-        return movieArray;
-    })
+                    //Collect Array Data
+                    Array.from(movies).forEach(function(e){
+                        movieArray.push(e);
+                        return movieArray;
+                    })
 
-    //Loop through Array
-    for (const movie of movieArray) {
-        //Call function per click
-        movie.addEventListener('click', toggleClass);
-    }
+                    //Loop through Array
+                    for (const movie of movieArray) {
+                        //Call function per click
+                        movie.addEventListener('click', toggleClass);
+                    }
                 }
  
     }
