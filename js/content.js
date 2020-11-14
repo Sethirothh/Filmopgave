@@ -1,7 +1,6 @@
 fetch('js/json/movies.json')
   .then(response => response.json())
   .then(data => {
-      console.log(data);
       // Do something with your data
         var json = data;
         loaded(json);
@@ -12,38 +11,36 @@ function loaded(json) {
     var container = document.querySelector('.grid-container');
     
     container.innerHTML = "";
-
     for (var movie of json) {
-        
-        fetch ('http://www.omdbapi.com/?t='+'movie.title'+'&apikey=503b9df0')
+        fetch ('http://www.omdbapi.com/?t='+movie.title+'&apikey=503b9df0')
             .then(response => {return response.json()
             }) 
             .then(data => {
-                console.log(data);       
-                container.innerHTML += `
-                    <div class="movie">
-                    <div class="imageclip">
-                    <img src="/img/${movie.img}" alt="">
-                    <h3>${movie.title}</h3>
-                    </div>
-                    <p>
-                    ${data.Plot}   
-                    </p>
-                    <iframe src="${youtube.generateEmbedUrl(movie.trailer)}">
-                
-                    </iframe>
-                    </div>
-                `;
+                fetchLoad(data);
 
+
+            
             }) 
-
             .catch(function(error){
                 console.log(error);
             });
         
- 
-    }
-    
+            function fetchLoad(json) {
+                var container = document.querySelector('.grid-container');
+                container.innerHTML += "";
+                    container.innerHTML += `
+                    <div class="movie">
+                    <div class="imageclip">
+                    <img src="${json.Poster}" alt="">
+                    <h3>${json.Title}</h3>
+                    </div>
+                    <p>
+                    ${json.Plot}   
+                    </p>
+                    </div>  
+                `;
+                
+
     // Array Declarations
     var movies = document.querySelectorAll('.movie'); 
     var movieArray = [];
@@ -59,9 +56,12 @@ function loaded(json) {
         //Call function per click
         movie.addEventListener('click', toggleClass);
     }
+                }
+ 
+    }
     
-
-};
+    
+}
 
 
         let youtube = {
