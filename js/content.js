@@ -16,7 +16,7 @@ function loaded(json) {
             .then(response => {return response.json()
             }) 
             .then(data => {
-                fetchLoad(data, movie.trailer);
+                fetchLoad(data);
 
 
             
@@ -25,7 +25,7 @@ function loaded(json) {
                 console.log(error);
             });
         
-            function fetchLoad(json, trailer) {
+            function fetchLoad(json) {
                 var container = document.querySelector('.grid-container');
                 container.innerHTML += "";
                 console.log(trailer);
@@ -41,7 +41,7 @@ function loaded(json) {
                             Release date: ${json.Released}, Resume: ${json.Plot}   
                         </p>
                         
-                        <iframe src="${youtube.generateEmbedUrl(trailer)}"> 
+                        <iframe src="${youtube.generateEmbedUrl(movie.trailer)}"> 
                     
                         </iframe> 
                     </div>  
