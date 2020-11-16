@@ -44,7 +44,7 @@ header {
                 width: 100%;
                 background-color:$colorGrey;
                 p {
-                    height: 150px;
+                    max-height: 400px;
                     padding: 20px;
                     box-sizing: border-box;
                 }
@@ -83,8 +83,7 @@ header {
                 }
             }
             p {
-                height:0;
-                min-height:0;
+                max-height: 0;
                 font-size:24px;
                 overflow: hidden;
                 transition:.3s;

@@ -11,24 +11,25 @@ function loaded(json) {
     var container = document.querySelector('.grid-container');
     
     container.innerHTML = "";
+    console.log(json);
     for (var movie of json) {
-        fetch ('http://www.omdbapi.com/?t='+movie.title+'&apikey=503b9df0')
-            .then(response => {return response.json()
+
+        fetch ('http://www.omdbapi.com/?t=' + movie.title + '&apikey=503b9df0')
+        .then(response => {
+            return response.json()
             }) 
             .then(data => {
                 fetchLoad(data);
 
-
-            
             }) 
             .catch(function(error){
                 console.log(error);
+                
             });
         
             function fetchLoad(json) {
                 var container = document.querySelector('.grid-container');
-                container.innerHTML += "";
-                    container.innerHTML += `
+                container.innerHTML += `
                     <div class="movie">
                         <div class="imageclip">
                         <img src="${json.Poster}" alt="">
@@ -39,7 +40,6 @@ function loaded(json) {
                         <p>
                             Release date: ${json.Released}, Resume: ${json.Plot}   
                         </p>
-                        
                         <!--
                         <iframe src="${youtube.generateEmbedUrl(movie.trailer)}"> 
                     
@@ -47,6 +47,7 @@ function loaded(json) {
                         -->
                     </div>  
                 `;
+                
                 
 
                     // Array Declarations
