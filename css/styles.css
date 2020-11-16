@@ -128,9 +128,13 @@ header::after {
 
 .movies .grid-container .movie.active p {
   max-height: 400px;
-  padding: 20px;
+  padding-bottom: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.movies .grid-container .movie.active p:nth-of-type(1) {
+  padding-top: 20px;
 }
 
 .movies .grid-container .movie .imageclip {
@@ -185,6 +189,23 @@ header::after {
   padding: 0 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.movies .grid-container .movie p span {
+  font-weight: bold;
+  position: relative;
+  z-index: 4;
+}
+
+.movies .grid-container .movie p span::before {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  z-index: -1;
 }
 
 .information {

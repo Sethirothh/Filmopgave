@@ -8,47 +8,65 @@ fetch('js/json/movies.json')
 
 
 function loaded(json) {
-    var container = document.querySelector('.grid-container');
+    var container = document.querySelector('.movies .grid-container');
     
     container.innerHTML = "";
-    console.log(json);
     for (var movie of json) {
+
+        
+        var movieDiv = document.createElement('section');
+        container.appendChild(movieDiv);
+        movieDiv.classList.add("movie");
+
+        var yt = document.createElement('iframe');
+        yt.src = youtube.generateEmbedUrl(movie.trailer);
+        movieDiv.appendChild(yt);
 
         fetch ('http://www.omdbapi.com/?t=' + movie.title + '&apikey=503b9df0')
         .then(response => {
             return response.json()
-            }) 
-            .then(data => {
-                fetchLoad(data);
-
-            }) 
-            .catch(function(error){
-                console.log(error);
-                
-            });
+        }) 
+        .then(data => {
+            fetchLoad(data);
+            
+        }) 
+        .catch(function(error){
+            console.log(error);
+            
+        });
         
-            function fetchLoad(json) {
-                var container = document.querySelector('.grid-container');
-                container.innerHTML += `
-                    <div class="movie">
-                        <div class="imageclip">
-                        <img src="${json.Poster}" alt="">
-                        <h3>
-                            ${json.Title}
-                        </h3>
-                        </div>
-                        <p>
-                            Release date: ${json.Released}, Resume: ${json.Plot}   
-                        </p>
-                        <!--
-                        <iframe src="${youtube.generateEmbedUrl(movie.trailer)}"> 
-                    
-                        </iframe> 
-                        -->
-                    </div>  
-                `;
+ 
+        function fetchLoad(json) {
+            var container = document.querySelectorAll('.movie');
+            for (var wrapper of container) {
                 
-                
+                var temp = document.createElement('div');
+                    temp.innerHTML += `
+                    <img src="${json.Poster} alt="">
+                    <h3>${json.Title}</h3>
+                    `;
+                temp.classList.add('imageclip');
+                wrapper.appendChild(temp);
+            }
+
+            /*var temp = container.innerHTML += `
+                    <div class="imageclip">
+                    <img src="${json.Poster}" alt="">
+                    <h3>
+                        ${json.Title}
+                    </h3>
+                    </div>
+                    <p>
+                        <span>Release date</span>: ${json.Released}, 
+                    </p>
+                    <p>
+                        <span>Resume</span>: ${json.Plot} 
+                    </p>
+                        <p><span>Rating</span>: ${json.imbdRating} 
+                    </p>
+            `;*/
+    
+            }
 
                     // Array Declarations
                     var movies = document.querySelectorAll('.movie'); 
@@ -65,9 +83,8 @@ function loaded(json) {
                         //Call function per click
                         movie.addEventListener('click', toggleClass);
                     }
-                }
- 
     }
+    
     
     
 }
