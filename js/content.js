@@ -28,7 +28,6 @@ function loaded(json) {
             function fetchLoad(json) {
                 var container = document.querySelector('.grid-container');
                 container.innerHTML += "";
-                console.log(trailer);
                     container.innerHTML += `
                     <div class="movie">
                         <div class="imageclip">
@@ -41,9 +40,11 @@ function loaded(json) {
                             Release date: ${json.Released}, Resume: ${json.Plot}   
                         </p>
                         
+                        <!--
                         <iframe src="${youtube.generateEmbedUrl(movie.trailer)}"> 
                     
                         </iframe> 
+                        -->
                     </div>  
                 `;
                 
