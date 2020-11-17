@@ -17,6 +17,7 @@ function loaded(json) {
         var movieDiv = document.createElement('section');
         container.appendChild(movieDiv);
         movieDiv.classList.add("movie");
+        movieDiv.setAttribute('id', movie.title);
 
         var yt = document.createElement('iframe');
         yt.src = youtube.generateEmbedUrl(movie.trailer);
@@ -25,6 +26,7 @@ function loaded(json) {
         fetch ('http://www.omdbapi.com/?t=' + movie.title + '&apikey=503b9df0')
         .then(response => {
             return response.json()
+            
         }) 
         .then(data => {
             fetchLoad(data);
@@ -37,17 +39,20 @@ function loaded(json) {
         
  
         function fetchLoad(json) {
-            var container = document.querySelectorAll('.movie');
-            for (var wrapper of container) {
-                
+            //var container = document.querySelectorAll('.movie');
+            //for (var wrapper of container) {
+                var wrapper = document.getElementById(json.Title);
                 var temp = document.createElement('div');
                     temp.innerHTML += `
                     <img src="${json.Poster} alt="">
                     <h3>${json.Title}</h3>
+                    <p><span>Released:</span>${json.Released}</p>
+                    <p><span>Resume:</span>${json.Plot}</p>
+                    <p><span>Rating:</span>${json.imdbRating}</p>
                     `;
                 temp.classList.add('imageclip');
                 wrapper.appendChild(temp);
-            }
+            //}
 
             /*var temp = container.innerHTML += `
                     <div class="imageclip">
