@@ -119,15 +119,28 @@ header::after {
   overflow: hidden;
   -webkit-transition: .3s;
   transition: .3s;
+  position: relative;
+}
+
+.movies .grid-container .movie iframe {
+  height: 0;
+  border: 0;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .movies .grid-container .movie.active {
   width: 100%;
   background-color: #A6A09C;
+  padding-bottom: 300px;
 }
 
 .movies .grid-container .movie.active p {
-  max-height: 400px;
+  max-height: 1000px;
   padding-bottom: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -135,6 +148,10 @@ header::after {
 
 .movies .grid-container .movie.active p:nth-of-type(1) {
   padding-top: 20px;
+}
+
+.movies .grid-container .movie.active iframe {
+  height: 300px;
 }
 
 .movies .grid-container .movie .imageclip {

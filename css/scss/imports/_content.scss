@@ -40,16 +40,31 @@ header {
             width: 100%;
             overflow: hidden;
             transition:.3s;
+            position: relative;
+            
+            iframe {
+                height:0;
+                border: 0;
+                width: 100%;
+                overflow: hidden;
+                position: absolute;
+                bottom:0;
+                transition:.3s;
+            }
             &.active {
                 width: 100%;
                 background-color:$colorGrey;
+                padding-bottom: 300px;
                 p {
-                    max-height: 400px;
+                    max-height: 1000px;
                     padding-bottom: 20px;
                     box-sizing: border-box;
                     &:nth-of-type(1) {
                         padding-top:20px;
                     }
+                }
+                iframe {
+                    height:300px;
                 }
             }
             .imageclip {

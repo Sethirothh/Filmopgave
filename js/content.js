@@ -46,12 +46,17 @@ function loaded(json) {
                     temp.innerHTML += `
                     <img src="${json.Poster} alt="">
                     <h3>${json.Title}</h3>
+                    `;
+                temp.classList.add('imageclip');
+                wrapper.appendChild(temp);
+                var textbox = document.createElement('div');
+                    textbox.innerHTML = `
                     <p><span>Released:</span>${json.Released}</p>
                     <p><span>Resume:</span>${json.Plot}</p>
                     <p><span>Rating:</span>${json.imdbRating}</p>
                     `;
-                temp.classList.add('imageclip');
-                wrapper.appendChild(temp);
+                textbox.classList.add('textbox');
+                wrapper.appendChild(textbox);
             //}
 
             /*var temp = container.innerHTML += `
